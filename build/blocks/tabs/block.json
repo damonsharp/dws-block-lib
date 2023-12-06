@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "dws-block-lib/tabs",
+  "version": "0.1.0",
+  "title": "Tabs",
+  "category": "dws-block-lib",
+  "icon": "admin-generic",
+  "description": "Block for laying out tabbed  interfaces.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "styles": [
+    {
+      "name": "tabs-top",
+      "label": "Tabs on top",
+      "isDefault": true
+    },
+    {
+      "name": "tabs-left",
+      "label": "Tabs on left"
+    },
+    {
+      "name": "tabs-right",
+      "label": "Tabs on right"
+    },
+    {
+      "name": "tabs-bottom",
+      "label": "Tabs on bottom"
+    }
+  ],
+  "textdomain": "tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

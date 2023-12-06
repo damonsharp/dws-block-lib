@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "dws-block-lib/tab",
+	"version": "0.1.0",
+	"title": "Tab",
+	"category": "dws-block-lib",
+	"icon": "text-page",
+	"description": "Block for single tab withing a tabs ui interface.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"parent": [
+		"dws-blocks-lib/tabs"
+	],
+	"textdomain": "tab",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

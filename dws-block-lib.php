@@ -14,7 +14,9 @@
 define( 'DWS_BLOCK_LIB_SLUG', 'dws-block-lib' );
 define( 'DWS_BLOCK_LIB_TITLE', 'DWS Block Library' );
 define( 'DWS_BLOCK_LIB_ROOT_DIR', trailingslashit( dirname( __FILE__ ) ) );
-define( 'DWS_BLOCK_LIB_BlOCKS_DIR', DWS_BLOCK_LIB_ROOT_DIR . 'blocks' );
+define( 'DWS_BLOCK_LIB_SRC_DIR', DWS_BLOCK_LIB_ROOT_DIR . 'src' );
+define( 'DWS_BLOCK_LIB_BUILD_DIR', DWS_BLOCK_LIB_ROOT_DIR . 'build' );
+define( 'DWS_BLOCK_LIB_BLOCKS_DIR', DWS_BLOCK_LIB_ROOT_DIR . 'build/blocks' );
 
 
 /**
@@ -51,18 +53,18 @@ add_action( 'after_setup_theme', 'dws_block_lib_editor_supports' );
  * @return void
  */
 function register_dws_blocks() : void {
-	foreach ( new DirectoryIterator( DWS_BLOCK_LIB_BlOCKS_DIR ) as $file_info ) {
+	foreach ( new DirectoryIterator( DWS_BLOCK_LIB_BLOCKS_DIR ) as $file_info ) {
 		if ( $file_info->isDot() ) {
 			continue;
 		}
 
 		$file_name = $file_info->getFilename();
-		$file      = DWS_BLOCK_LIB_BlOCKS_DIR . "/{$file_name}/{$file_name}.php";
+		$dir      = DWS_BLOCK_LIB_BLOCKS_DIR . "/{$file_name}";
 
-		if ( file_exists( $file ) ) {
-			require_once $file;
+		if ( file_exists( $dir ) ) {
+			register_block_type_from_metadata( $dir );
 		}
 	}
 }
 
-register_dws_blocks();
+add_action( 'init', 'register_dws_blocks' );
