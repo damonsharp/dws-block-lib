@@ -1,5 +1,9 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, InnerBlocks, InspectorControls } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	InnerBlocks,
+	InspectorControls
+} from '@wordpress/block-editor';
 import { PanelBody } from "@wordpress/components";
 import './editor.scss';
 
@@ -13,14 +17,19 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<div { ...useBlockProps() }>
+		<div {...useBlockProps()}>
 			<InnerBlocks
-				allowedBlocks={[ "dws-block-lib/tab"]}
-				template={[
-					[ "dws-block-lib/tab" ],
-					[ "dws-block-lib/tab" ],
-					[ "dws-block-lib/tab" ],
-				]}
+				allowedBlocks={[ "dws-block-lib/tab-button", "dws-block-lib/tab-panel" ]}
+				template={
+					[
+						[ "dws-block-lib/tab-button", { placeholder: 'Tab 1 Title'} ],
+						[ "dws-block-lib/tab-button", { placeholder: 'Tab 2 Title'} ],
+						[ "dws-block-lib/tab-button", { placeholder: 'Tab 3 Title'} ],
+						[ "dws-block-lib/tab-panel", { placeholder: 'Tab 1 Panel'} ],
+						[ "dws-block-lib/tab-panel", { placeholder: 'Tab 2 Panel'} ],
+						[ "dws-block-lib/tab-panel", { placeholder: 'Tab 3 Panel'} ],
+					]
+				}
 			/>
 		</div>
 	);

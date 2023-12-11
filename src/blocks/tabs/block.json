@@ -30,7 +30,7 @@
 			"label": "Tabs on bottom"
 		}
 	],
-	"textdomain": "tabs",
+	"textdomain": "dws-blocks-lib-tabs",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

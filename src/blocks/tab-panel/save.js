@@ -1,4 +1,5 @@
 import { useBlockProps } from '@wordpress/block-editor';
+import { __ } from "@wordpress/i18n";
 
 /**
  * The save function defines the way in which the different attributes should
@@ -12,7 +13,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function save() {
 	return (
 		<p { ...useBlockProps.save() }>
-			{ 'Testimonials – hello from the saved content!' }
+			{ __( 'Tab content would go here!', 'testimonials' ) }
 		</p>
 	);
 }

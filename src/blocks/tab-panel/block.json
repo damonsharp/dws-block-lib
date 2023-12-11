@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "dws-block-lib/tab-panel",
+	"version": "0.1.0",
+	"title": "Tab Panel",
+	"category": "dws-block-lib",
+	"icon": "text-page",
+	"description": "Tab panel block. Only for use withing a tabs block.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"parent": [
+		"dws-blocks-lib/tabs"
+	],
+	"textdomain": "dws-blocks-lib-tabs",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
