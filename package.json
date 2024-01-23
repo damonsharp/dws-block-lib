@@ -12,7 +12,8 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start"
+		"start": "wp-scripts start",
+		"create-block": "cd ./src/blocks && npx @wordpress/create-block@latest --no-plugin $npm_config_name"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^26.18.0"
