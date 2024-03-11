@@ -1,5 +1,5 @@
-import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
 import './editor.scss';
 
 /**
@@ -11,6 +11,8 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit() {
+	console.log(new Intl.DateTimeFormat("en-US", {timeZone: 'America/Mazatlan', }).format(new Date().getTime()));
+
 	return (
 		<p { ...useBlockProps() }>
 			{ __( 'Testimonials – hello from the editor!', 'testimonials' ) }
